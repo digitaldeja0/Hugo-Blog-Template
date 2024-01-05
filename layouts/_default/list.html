@@ -1,0 +1,36 @@
+{{ define "main"}}
+
+<div class="list">
+    {{range .Paginator.Pages}}
+    <div class="listItem">
+        <div class="ImgContainer">
+            <img src={{ .Params.image }} alt={{ .Title }} class="previewImage" loading="lazy" >
+        </div>
+
+        <div class="textContainer">
+            <h1>
+                <a href={{.Permalink}}>{{.Title}}</a>
+            </h1>
+            <p>
+                {{ .Params.description }}
+            </p>
+            <div class="avatarContainer">
+                <img src={{ .Params.avatar}} alt="avatar" class="avatarImage" loading="lazy" >
+                {{ range .GetTerms "authors"}}
+                    <p><a href={{ .Permalink}}> {{ .Name}}</a></p>
+                    {{end}}
+            </div>
+            <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
+
+              <div class="listItemCats">
+                    {{ range .GetTerms "categories"}}
+                    <a href={{ .Permalink}}> {{ .Name}}</a>
+                    {{end}}
+                </div>
+            
+        </div>
+    </div>
+    {{end}}
+</div>
+
+{{ end }}
