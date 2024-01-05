@@ -53,9 +53,6 @@ body{
     text-decoration: underline;
 }
 
-
-
-
 .logo{
     font-size: large;
 }
@@ -79,6 +76,7 @@ body{
 .listItemCats a{
   background-color: var(--bgli);
   margin-right:15px;
+  padding: 10px 20px;
 }
 
 .textContainer{
@@ -103,6 +101,71 @@ body{
   align-items: center;
 }
 
+.single{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin-bottom: auto;
+  padding-top: 100px;
+}
+
+.singleMain{
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+
+.top{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sideSingle{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+}
+.sideBarImg{
+  width: 200px;
+}
+
+.pagination{
+  display: flex;
+  gap: 10px; 
+  list-style: none;
+  font-size: 12px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.page-item{
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.page-item.active{
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.page-item.disabled{
+  background-color: var(--bgli);
+  cursor: not-allowed;
+}
+
+
+
+
 .container {
     max-width: 1366px;
     padding-left: 50px;
@@ -113,6 +176,8 @@ body{
     flex-direction: column;
     justify-content: space-between;
   }
+
+  
 
 @media (max-width: 1536px) {
     .container {
@@ -136,38 +201,12 @@ body{
       padding-right: 10px;
     }
   
-    .singleHeadImg {
-      display: none;
-    }
-  
-    .singleBottom {
-      flex-direction: column-reverse;
-    }
-  
-    .rightBarImg {
-      display: none;
-    }
-  
-    .rightBarImgHr {
-      display: block;
-      width: 100%;
-    }
   }
   @media (max-width: 768px) {
     .container {
       max-width: 640px;
     }
-    .links {
-      font-size: 14px;
-    }
-  
-    .listItemImage {
-      display: none;
-    }
-  
-    .searchButton span{
-      display: none;
-    }
+
   }
   @media (max-width: 640px) {
     .container {

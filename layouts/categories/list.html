@@ -1,5 +1,13 @@
 {{ define "main"}}
 
+{{ if eq .RelPermalink "/categories/"}} 
+{{ range $.Site.Taxonomies.categories.ByCount }}
+  <a href="/categories/{{ .Name }}">
+    # {{ .Name }} <small>({{.Count}})</small>
+  </a>
+{{end}}
+{{ else }}
+
 <div class="list">
     {{range .Paginator.Pages}}
     <div class="listItem">
@@ -30,7 +38,8 @@
             
         </div>
     </div>
-    {{end}}  {{ template "_internal/pagination.html" .}}
+    {{end}} {{ template "_internal/pagination.html" .}}
 </div>
 
 {{ end }}
+{{end}}
